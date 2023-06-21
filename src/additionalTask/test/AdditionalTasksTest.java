@@ -23,6 +23,9 @@ class AdditionalTasksTest {
 		
 		String str4 = "{[]}{(q}){[]}";
 		assertFalse(hasValidBrackets(str4));
+		
+		String str5 = "{[]}{(q)}{[]}(";
+		assertFalse(hasValidBrackets(str5));
 	}
 	@Test
 	void isAnagramTest() {

@@ -23,24 +23,20 @@ public class AdditionalTasks {
 	// #4
 	public static boolean hasValidBrackets(String text) {
 		char[] array = text.toCharArray();
-		char[] openBrecket = new char[array.length];
-		char[] closeBrecket = new char[array.length];
-//		char[] brecketCheackArr = new char[array.length];
+		char[] openBrecket = new char[array.length / 2];
+		char[] closeBrecket = new char[1];
 		int indexOpen = 0;
 		int indexClose = 0;
-//		int countOfBreckets = 0;
-//		int j = 0;
-//		for (int i = 0; i < brecketCheackArr.length; i++) {
-//			if (checkBrecket(array, i) != 0) {
-//				brecketCheackArr[j] = array[i];
-//				j++;
-//				countOfBreckets += 1;
-//			}
-//		}
+		int countOfBreckets = 0;
 		for (int i = 0; i < array.length; i++) {
-//			if (array.length % 2 != 0) {
-//				return false;
-//			}
+			if (checkBrecket(array, i) != 0) {
+				countOfBreckets += 1;
+			}
+		}
+		for (int i = 0; i < array.length; i++) {
+			if (countOfBreckets % 2 != 0) {
+				return false;
+			}
 			if (checkBrecket(array, i) < 0 && indexOpen == 0) {
 				return false;
 			} else if (checkBrecket(array, i) > 0) {
